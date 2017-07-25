@@ -1,0 +1,445 @@
+// components
+@import "compass/css3";
+
+// modules
+@import "modules/base";
+@import "modules/mixin";
+
+// sprites
+$header-sprite-dimensions: true;
+$phones-sprite-dimensions: true;
+$social-sprite-dimensions: true;
+
+$header-spacing: 75px;
+$phones-spacing: 5px;
+
+$header-layout: horizontal;
+$social-layout: horizontal;
+
+@import "header/*.png";
+@import "phones/*.png";
+@import "social/*.png";
+
+// ***** BODY *****
+body {
+	font-family: $font;
+	h1, h2, label, span, td, th,
+	li, p, a, a:hover, a:focus {
+		font-weight: $regular;
+		color: $primary;
+	}
+
+	// ----- title -----
+	.title {
+		border: $depth solid $border;
+    	border-bottom: none;
+		margin-top: 20px;
+		padding: 25px;
+    	.name {
+			line-height: 1.1;
+			font-size: em(24);
+			text-transform: uppercase;
+		}
+	}
+
+	// ----- text -----
+	.text {
+		padding: $padding;
+		display: inline-block;
+		border: $depth solid $border;
+		p { text-align: justify; }
+		.title {
+			border: none;
+			padding: 0;
+		}
+	}
+
+	// ----- text toggle -----
+	.text-toggle {
+		@extend .text;
+		cursor: pointer;
+		span { float: right; }
+		.more { display: none; }
+	}
+	
+	// ----- seo layout -----
+	.seo-layout {
+	    margin-bottom: 20px;
+	}
+	
+	// ***** HEADER *****
+	#header {
+
+		// ----- header top -----
+		.header-top {
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: $background;
+			border-bottom: $depth solid $border;
+			box-shadow: 0 2px 10px rgba(0,0,0,.2);
+			a {
+				margin: 0 10px;
+				color: $secondary;
+				font-size: em(13);
+				padding-left: 23px;
+				&:nth-child(1) { @include header-sprite(info); }
+				&:nth-child(2) { @include header-sprite(price); }
+				&:nth-child(3) { @include header-sprite(delivery); }
+				&:nth-child(4) { @include header-sprite(discounts); }
+			}
+			.right {
+				float: right;
+				a:nth-child(1) { @include header-sprite(manage); }
+				a:nth-child(2) { @include header-sprite(account); }
+			}
+		}
+
+		// ----- header bottom -----
+		.header-bottom {
+			padding: 10px 0;
+			@include background(linear-gradient(bottom, $from-2, $to-2));
+
+			// ----- header logo -----
+			.header-logo {
+				margin-top: 5px;
+				display: inline-flex;
+				p {
+					padding-left: 10px;
+					text-transform: uppercase;
+					&:first-child {
+						font-size: em(20);
+						font-weight: $thin;
+					}
+					&:last-child {
+						font-size: em(28);
+						font-weight: $bold;
+					}
+				}
+			}
+
+			// ----- header search -----
+			.header-search {
+				ul li {
+					color: $silver;
+					padding: 0 5px;
+					font-size: em(12);
+					@include inline-block;
+					a {
+						background: none;
+						&:hover {
+							color: $blue;
+							border-bottom: $depth dashed;
+						}
+					}
+				}
+				form {
+					input[type=text] {
+						width: 82%;
+						padding: 8px 10px;
+						margin: 10px 0 10px 5px;
+					}
+					button {
+						border: 0;
+						padding: 0;
+						background: transparent;
+						img { margin-left: -4px; }
+					}
+				}
+			}
+
+			// ----- header contacts -----
+			.header-contacts {
+				font-weight: $thin;
+				ul li {
+					font-size: em(12);
+					&:first-child {
+						padding-bottom: 5px;
+						font-weight: $bold;
+					}
+				}
+			}
+
+			// ----- header phones -----
+			.header-phones a {
+				line-height: 1.2;
+				font-size: em(19);
+				padding-left: 30px;
+				&[href*="+38067"] { @include phones-sprite(kievstar); }
+				&[href*="+38063"] { @include phones-sprite(life); }
+				&[href*="+38066"] { @include phones-sprite(mts); }
+				&:last-child {
+					padding: 0;
+					font-size: em(14);
+				}
+			}
+		}
+	}
+
+	// ***** MENU *****
+	#menu {
+		@include background(linear-gradient(bottom, $from-1, $to-1));
+		ul li {
+			padding: 15px 0;
+			font-weight: $bold;
+			@include inline-block;
+			ul {
+				display: none;
+				li {
+					padding: 0;
+					width: 100%;
+					border-bottom: 1px solid $border;
+					&:last-child { border-bottom: none; }
+					&:hover { background: none; }
+					a {
+						width: 100%;
+						display: block;
+						padding: $padding;
+					}
+				}
+			}
+			&:hover {
+				@include background(linear-gradient(top, $from-2, $to-2));
+				ul {
+				    width: 200px;
+				    height: auto;
+				    z-index: 2000;
+				    margin-top: 15px;
+				    display: inherit;
+				    position: absolute;
+				    background-color: #FFF;
+				    box-shadow: 0 6px 10px rgba(0,0,0,.2);
+				}
+				a { color: $primary; }
+				& > a { color: $blue; }
+			}
+		}
+		a {
+			color: #FFF;
+			padding: 16px 25px;
+			position: relative;
+		}
+		.basket {
+			padding: 0;
+			img {
+			    padding: 10px 30px;
+			}
+			span {
+			    top: -12px;
+			    right: 20px;
+			    color: #FFF;
+			    padding: 0 6px;
+			    font-size: em(13);
+			    position: absolute;
+			    background-color: $red;
+			    @include border-radius(50%);
+			}
+		}
+	}
+
+	// ***** FOOTER *****
+	#footer {
+		z-index: 2;
+		height: 250px;
+		padding: 40px 0;
+		margin-top: -250px;
+		position: relative;
+		font-weight: $thin;
+		@include background(linear-gradient(bottom, $from-1, $to-1));
+		p, a { color: #FFF; }
+		ul li { padding: 4px 0; }
+		.footer-phones {
+			p {
+				font-size: em(18);
+				font-weight: $bold;
+				padding-bottom: 0 !important;
+				span {
+					color: #FFF;
+					font-size: em(10);
+					font-weight: $thin;
+				}
+			}
+			.footer-mail {
+				font-size: em(14);
+				font-weight: $thin;
+			}
+		}
+		.footer-social {
+			padding-top: 20px;
+			a {
+				margin-left: 18px;
+				@include inline-block;
+				&[href*="facebook"] { @include social-sprite(facebook); }
+				&[href*="twitter"] { @include social-sprite(twitter); }
+				&[href*="vk"] { @include social-sprite(vk); }
+			}
+		}
+	}
+
+	// ***** ARTICLE *****
+	#article {
+		padding-bottom: 310px;
+		position: relative;
+		
+		// ----- link -----
+	    .link {
+	    	border: none;
+	    	cursor: pointer;
+	    	&:hover {
+	    		color: $blue;
+	    		border-bottom: 1px dashed;
+	    	}
+		}
+
+		// ----- form -----
+		.form input, .form textarea {
+		    width: 100%;
+		    resize: none;
+		    outline: none;
+		    padding: $padding;
+		    margin-bottom: 10px;
+		    border: $depth solid $border;
+		    @include border-radius($radius);
+		}
+
+		// ----- overview -----
+		.overview {
+			@extend .text;
+			img {
+				padding: 15px 0;
+				max-width: 285px;
+				max-height: 200px;
+				&:hover { opacity: .5; }
+			}
+			p {
+				text-align: left !important;
+				a {
+					font-weight: $bold;
+					&:hover {
+						color: $blue;
+						text-decoration: underline;
+					}
+				}
+			}
+			.block {
+				padding-top: 15px;
+				padding-bottom: 15px;
+				p { text-align: justify !important; }
+			}
+		}
+		
+		// ----- tabs -----
+		.tabs {
+			#tab-1, #tab-2, #tab-3 { display: none; }
+			#tab-1:checked ~ #content-1,
+			#tab-2:checked ~ #content-2,
+			#tab-3:checked ~ #content-3 { display: block; }
+			label {
+				color: $silver;
+				padding: 5px 25px;
+				margin-bottom: -1px;
+				display: inline-block;
+				font-weight: $regular;
+				text-transform: uppercase;
+				&:hover {
+					cursor: pointer;
+					color: $secondary;
+				}
+			}
+			input:checked + label {
+				@include background(linear-gradient(top, $from-2, $to-2));
+				border: $depth solid $border;
+				@include border-top-radius($radius);
+				border-bottom: none;
+				padding: 5px 24px;
+				color: $secondary;
+			}
+			section {
+				display: none;
+				border-top: $depth solid $border;
+			}
+		}
+
+		// ----- catalog -----
+		.catalog {
+		    border: $depth solid $border;
+		    padding: $padding;
+	    	border-top: none;
+			.product-block-outer {
+				padding: 0;
+				min-height: 350px;
+				.product-block-inner {
+				    padding: 20px 20px 15px;
+				    .description { display: none; }
+					input[type="button"] { visibility: hidden; }
+					img { padding-bottom: 15px; }
+					p {
+						padding: 0;
+						text-transform: inherit;
+						&:first-child {
+						    overflow: hidden;
+							white-space: nowrap;
+						    text-overflow: ellipsis;
+						}
+					}
+				    &:hover {
+				    	width: 100%;
+		   				z-index: 1000;
+						transition: .2s;
+		    			position: absolute;
+						box-shadow: 0 10px 20px rgba(0,0,0,.2);
+						@include background(linear-gradient(bottom, $from-2, $to-2));
+						.description {
+							display: block;
+					    	padding: 10px 0;
+							font-weight: $bold;
+							span { font-weight: $regular; }
+						}
+						input[type="button"] { visibility: visible; }
+					}
+				}
+			}
+		}
+
+		// ----- purchase -----
+		.price {
+			float: left;
+			font-size: em(24);
+		}
+		input[type="button"] {
+			color: #FFF;
+			float: right;
+		    font-size: em(18);
+		    padding: 5px 10px;
+			background-color: $button;
+		    border: $depth solid $silver;
+			@include border-radius($radius);
+			&:hover {
+				color: $primary;
+				border-color: $primary;
+				background-color: #FFF;
+			}
+		}
+		
+		// ----- instagram widget -----
+	    .ig-b- {
+	    	display: inline-block;
+	    	img { visibility: hidden; }
+    		&:hover { background-position: 0 -60px; }
+    		&:active { background-position: 0 -120px; }
+    	}
+	    .ig-b-v-24 {
+	    	width: 137px;
+	    	height: 24px;
+	    	background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0;
+	    	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+		    only screen and (min--moz-device-pixel-ratio: 2),
+		    only screen and (-o-min-device-pixel-ratio: 2 / 1),
+		    only screen and (min-device-pixel-ratio: 2),
+		    only screen and (min-resolution: 192dpi),
+		    only screen and (min-resolution: 2dppx) {
+	        	background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png);
+	        	background-size: 160px 178px;
+		    }
+	    }
+	}
+}

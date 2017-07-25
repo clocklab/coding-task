@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Coding task for developers</title>
+ 		//= template/head.html
+	</head>
+  	<body class="container-fluid">
+		<div class="wrapper">
+
+			<!-- seo layout -->
+			<div class="seo-layout">
+				<div class="container">
+					<div class="row">
+
+						<!-- title -->
+						<div class="title">
+							<h1 class="name">Интернет-магазин</h1>
+						</div>
+
+						<!-- text toggle -->
+						<div class="text-toggle">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Lorem ipsum dolor sit amet, consectetur.</p>
+							<div class="more">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Lorem ipsum dolor sit amet, consectetur.</p>
+							</div>
+							<span>&darr;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+  			<!-- HEADER -->
+			//= template/header.html
+			
+			<!-- MENU -->
+			//= template/main-menu.html
+
+			<!-- ARTICLE -->
+			<article id="article" class="article">
+				<div class="container">
+					<div class="row">
+					
+						<!-- title -->
+						<div class="title">
+							<div class="row">
+								<div class="col-sm-10">
+									<p class="name">Наши предложения</p>
+								</div>
+								<div class="col-sm-2 text-right">
+									<a class="link" href="#">Все предложения</a>
+								</div>
+							</div>
+						</div>
+						
+						<!-- tabs -->
+						<div class="catalog tabs text-center">
+						    <input id="tab-1" type="radio" name="tabs" checked>
+						    <label for="tab-1" title="Вкладка 1">Акции</label>
+						    <input id="tab-2" type="radio" name="tabs">
+						    <label for="tab-2" title="Вкладка 2">Популярные</label>
+						    <input id="tab-3" type="radio" name="tabs">
+						    <label for="tab-3" title="Вкладка 3">Новинки</label>
+						    <section id="content-1">
+								<div class="row">
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+								</div>
+							</section>
+						    <section id="content-2">
+								<div class="row">
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+								</div>
+						    </section> 
+						    <section id="content-3">
+								<div class="row">
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+									<div class="product-block-outer col-sm-3">
+										//= template/product-box.html
+									</div>
+								</div>
+						    </section> 
+						</div>
+						
+						<!-- title -->
+						<div class="title">
+							<div class="row">
+								<div class="col-sm-10">
+									<p class="name">Популярные товары</p>
+								</div>
+								<div class="col-sm-2 text-right">
+									<a class="link" href="#">Все товары</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- catalog -->
+						<div class="catalog text-center">
+							<div class="row">
+								<div class="product-block-outer col-sm-3">
+									//= template/product-box.html
+								</div>
+								<div class="product-block-outer col-sm-3">
+									//= template/product-box.html
+								</div>
+								<div class="product-block-outer col-sm-3">
+									//= template/product-box.html
+								</div>
+								<div class="product-block-outer col-sm-3">
+									//= template/product-box.html
+								</div>
+							</div>
+						</div>
+
+						<!-- title -->
+						<div class="title">
+							<div class="row">
+								<div class="col-sm-10">
+									<p class="name">Новости, статьи и обзоры</p>
+								</div>
+								<div class="col-sm-2 text-right">
+									<a class="link" href="#">Все материалы</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- overview -->
+						<div class="overview text-center">
+							<div class="row">
+								<div class="col-sm-3">
+									<a href="#"><img src="images/overview.jpg" alt=""></a>
+									<p><a href="#">Изображения упаковки рассказали о смартфоне iPhone 6s и iPhone 6s Plus</a></p>
+									<p>На днях появились достоверные данные о новинке, включая детали процессора. Исходя из предыдущих слухов, можно сделать вывод, что в бенчмарке засветился старший смартфон линейки — iPhone 6s Plus ...</p>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/overview.jpg" alt=""></a>
+									<p><a href="#">Изображения упаковки рассказали о смартфоне iPhone 6s и iPhone 6s Plus</a></p>
+									<p>На днях появились достоверные данные о новинке, включая детали процессора. Исходя из предыдущих слухов, можно сделать вывод, что в бенчмарке засветился старший смартфон линейки — iPhone 6s Plus ...</p>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/overview.jpg" alt=""></a>
+									<p><a href="#">Изображения упаковки рассказали о смартфоне iPhone 6s и iPhone 6s Plus</a></p>
+									<p>На днях появились достоверные данные о новинке, включая детали процессора. Исходя из предыдущих слухов, можно сделать вывод, что в бенчмарке засветился старший смартфон линейки — iPhone 6s Plus ...</p>
+								</div>
+								<div class="col-sm-3">
+									<a href="#"><img src="images/overview.jpg" alt=""></a>
+									<p><a href="#">Изображения упаковки рассказали о смартфоне iPhone 6s и iPhone 6s Plus</a></p>
+									<p>На днях появились достоверные данные о новинке, включая детали процессора. Исходя из предыдущих слухов, можно сделать вывод, что в бенчмарке засветился старший смартфон линейки — iPhone 6s Plus ...</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- footer -->
+			//= template/footer.html
+		</div>
+
+	    <!-- script -->
+		//= template/script.html
+	</body>
+</html>

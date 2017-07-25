@@ -1,0 +1,30 @@
+// modules
+@import "modules/base";
+
+// image size mixin
+@mixin image-size($path) {
+    $image: $path;
+    width: image-width($image);
+    height: image-height($image);
+}
+
+// px to em function
+@function em($pixels, $context: $browser-context) {
+    @if (unitless($pixels)) { $pixels: $pixels * 1px; }
+    @if (unitless($context)) { $context: $context * 1px; }
+    @return $pixels / $context * 1em;
+}
+
+// media queries mixins
+@mixin mobile {
+    @media (min-width: #{$screen-xs}) and (max-width: #{$screen-sm - 1px}) { @content; }
+}
+@mixin tablet {
+    @media (min-width: #{$screen-sm}) and (max-width: #{$screen-md - 1px}) { @content; }
+}
+@mixin laptop {
+    @media (min-width: #{$screen-md}) and (max-width: #{$screen-lg - 1px}) { @content; }
+}
+@mixin desktop {
+    @media (min-width: #{$screen-lg}) { @content; }
+}
